@@ -1075,42 +1075,9 @@ export const useGetChainName = () => {
   return result
 }
 
-// export const useChainNameByQuery = (): MultiChainName => {
-//   const { query } = useRouter()
-//   const chainName = useMemo(() => {
-//     switch (query?.chainName) {
-//       case 'eth':
-//         return 'ETH'
-//       case 'polygon-zkevm':
-//         return 'POLYGON_ZKEVM'
-//       case 'zksync':
-//         return 'ZKSYNC'
-//       case 'arb':
-//         return 'ARB'
-//       case 'linea':
-//         return 'LINEA'
-//       case 'base':
-//         return 'BASE'
-//       case 'opbnb':
-//         return 'OPBNB'
-//       default:
-//         return 'BSC'
-//     }
-//   }, [query])
-//   return chainName
-// }
-
 export const useChainNameByQuery = (): "DENERGY" => {
-  const { query } = useRouter();
-  const chainName = useMemo(() => {
-    if (query?.chainName === 'denergy') {
-      return 'DENERGY';
-    }
-    return 'DENERGY'; // Default to "DENERGY" if no match
-  }, [query]);
-  return chainName;
-};
-
+  return "DENERGY"
+}
 
 export const useChainIdByQuery = () => {
   const chainName = useChainNameByQuery()
