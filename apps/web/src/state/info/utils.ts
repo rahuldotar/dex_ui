@@ -23,9 +23,9 @@ export function getChainName(chainId: ChainId) {
   switch (chainId) {
     case ChainId.BSC:
       return 'BSC'
-    case ChainId.ETHEREUM:
-      return 'ETH'
+    case ChainId.DENERGY:
+      return 'DENERGY'
     default:
-      return 'BSC'
+      return 'DENERGY'
   }
 }
