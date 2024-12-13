@@ -14,10 +14,10 @@ export const chainNameConverter = (name: string) => {
 
 export const multiChainNameConverter = (name: MultiChainName) => {
   switch (name) {
-    case 'BSC':
-      return 'BNB Chain'
-    case 'LINEA':
-      return 'Linea'
+    case 'DENERGY':
+      return 'DENERGY'
+    // case 'LINEA':
+    //   return 'Linea'
     default:
       return name
   }
