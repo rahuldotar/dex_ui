@@ -1062,8 +1062,8 @@ export const useGetChainName = () => {
   const { pathname, query } = useRouter()
 
   const getChain = useCallback(() => {
-    if (pathname.includes('eth') || query.chain === 'eth') return 'ETH'
-    return 'BSC'
+    if (pathname.includes('denergy') || query.chain === 'denergy') return 'DENERGY'
+    return 'DENERGY'
   }, [pathname, query])
   const [name, setName] = useState<MultiChainName | null>(() => getChain())
   const result = useMemo(() => name, [name])
@@ -1075,30 +1075,42 @@ export const useGetChainName = () => {
   return result
 }
 
-export const useChainNameByQuery = (): MultiChainName => {
-  const { query } = useRouter()
+// export const useChainNameByQuery = (): MultiChainName => {
+//   const { query } = useRouter()
+//   const chainName = useMemo(() => {
+//     switch (query?.chainName) {
+//       case 'eth':
+//         return 'ETH'
+//       case 'polygon-zkevm':
+//         return 'POLYGON_ZKEVM'
+//       case 'zksync':
+//         return 'ZKSYNC'
+//       case 'arb':
+//         return 'ARB'
+//       case 'linea':
+//         return 'LINEA'
+//       case 'base':
+//         return 'BASE'
+//       case 'opbnb':
+//         return 'OPBNB'
+//       default:
+//         return 'BSC'
+//     }
+//   }, [query])
+//   return chainName
+// }
+
+export const useChainNameByQuery = (): "DENERGY" => {
+  const { query } = useRouter();
   const chainName = useMemo(() => {
-    switch (query?.chainName) {
-      case 'eth':
-        return 'ETH'
-      case 'polygon-zkevm':
-        return 'POLYGON_ZKEVM'
-      case 'zksync':
-        return 'ZKSYNC'
-      case 'arb':
-        return 'ARB'
-      case 'linea':
-        return 'LINEA'
-      case 'base':
-        return 'BASE'
-      case 'opbnb':
-        return 'OPBNB'
-      default:
-        return 'BSC'
+    if (query?.chainName === 'denergy') {
+      return 'DENERGY';
     }
-  }, [query])
-  return chainName
-}
+    return 'DENERGY'; // Default to "DENERGY" if no match
+  }, [query]);
+  return chainName;
+};
+
 
 export const useChainIdByQuery = () => {
   const chainName = useChainNameByQuery()
