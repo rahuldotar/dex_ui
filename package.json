@@ -27,7 +27,7 @@
     "build:games": "turbo run build --filter=games...",
     "build:packages": "turbo run build --filter=./packages/* --filter=./packages/routing-sdk/addons/*",
     "build:gamification": "turbo run build --filter=gamification...",
-    "start": "turbo run start --filter=web --host 0.0.0.0",
+    "start": "turbo run start --filter=web -- --host 0.0.0.0",
     "test:config": "pnpm turbo run test:config --filter=web...[HEAD^1]",
     "test:ci": "pnpm turbo run test --filter=[HEAD^1]",
     "lint": "turbo run lint",
