@@ -5,6 +5,7 @@ import { ChainId, isTestnetChainId } from '@pancakeswap/chains'
 import { STABLE_SUPPORTED_CHAIN_IDS } from '@pancakeswap/stable-swap-sdk'
 import { BSC_TOKEN_WHITELIST, ETH_TOKEN_BLACKLIST, ETH_TOKEN_WHITELIST, TOKEN_BLACKLIST } from 'config/constants/info'
 import mapValues from 'lodash/mapValues'
+import { bsc } from 'wagmi/chains'
 // import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, zkSync } from 'wagmi/chains'
 
 export type MultiChainName = 'DENERGY' | 'BSC'
@@ -12,7 +13,7 @@ export type MultiChainName = 'DENERGY' | 'BSC'
 export type MultiChainNameExtend = MultiChainName | 'BSC_TESTNET' | 'ZKSYNC_TESTNET'
 
 export const multiChainName: Record<number | string, MultiChainNameExtend> = {
-  // [ChainId.BSC]: 'BSC',
+  [ChainId.BSC]: 'BSC',
   // [ChainId.ETHEREUM]: 'ETH',
   // [ChainId.BSC_TESTNET]: 'BSC_TESTNET',
   // [ChainId.POLYGON_ZKEVM]: 'POLYGON_ZKEVM',
@@ -29,7 +30,7 @@ export const multiChainShortName: Record<number, string> = {
 }
 
 export const multiChainQueryMainToken: Record<MultiChainName, string> = {
-  // BSC: 'BNB',
+  BSC: 'BNB',
   // ETH: 'ETH',
   // POLYGON_ZKEVM: 'ETH',
   // ZKSYNC: 'ETH',
@@ -41,7 +42,7 @@ export const multiChainQueryMainToken: Record<MultiChainName, string> = {
 }
 
 export const multiChainId: Record<MultiChainName, ChainId> = {
-  // BSC: ChainId.BSC,
+  BSC: ChainId.BSC,
   // ETH: ChainId.ETHEREUM,
   // POLYGON_ZKEVM: ChainId.POLYGON_ZKEVM,
   // ZKSYNC: ChainId.ZKSYNC,
@@ -85,7 +86,7 @@ export const STABLESWAP_SUBGRAPHS_START_BLOCK = {
 }
 
 export const multiChainScan: Record<MultiChainName, string> = {
-  // BSC: bsc.blockExplorers.default.name,
+  BSC: bsc.blockExplorers.default.name,
   // ETH: mainnet.blockExplorers.default.name,
   // POLYGON_ZKEVM: polygonZkEvm.blockExplorers.default.name,
   // ZKSYNC: zkSync.blockExplorers.default.name,
