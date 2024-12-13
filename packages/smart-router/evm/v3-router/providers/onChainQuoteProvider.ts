@@ -52,6 +52,7 @@ const SUCCESS_RATE_CONFIG = {
   [ChainId.SEPOLIA]: 0.1,
   [ChainId.ARBITRUM_SEPOLIA]: 0.1,
   [ChainId.BASE_SEPOLIA]: 0.1,
+  [ChainId.DENERGY]: 0.1, // Update
 } as const satisfies Record<ChainId, number>
 
 type V4ClInputs = [

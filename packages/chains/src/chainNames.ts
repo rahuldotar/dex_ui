@@ -21,6 +21,7 @@ export const chainNames: Record<ChainId, string> = {
   [ChainId.SEPOLIA]: 'sepolia',
   [ChainId.ARBITRUM_SEPOLIA]: 'arbSepolia',
   [ChainId.BASE_SEPOLIA]: 'baseSepolia',
+  [ChainId.DENERGY]: 'denergy'
 }
 
 export const chainNamesInKebabCase = {
@@ -44,28 +45,30 @@ export const chainNamesInKebabCase = {
   [ChainId.SEPOLIA]: 'sepolia',
   [ChainId.ARBITRUM_SEPOLIA]: 'arbitrum-sepolia',
   [ChainId.BASE_SEPOLIA]: 'base-sepolia',
+  [ChainId.DENERGY]: 'denergy'
 } as const
 
 export const mainnetChainNamesInKebabCase = {
-  [ChainId.ETHEREUM]: 'ethereum',
-  [ChainId.GOERLI]: 'ethereum',
+  // [ChainId.ETHEREUM]: 'ethereum',
+  // [ChainId.GOERLI]: 'ethereum',
   [ChainId.BSC]: 'bsc',
-  [ChainId.BSC_TESTNET]: 'bsc',
-  [ChainId.ARBITRUM_ONE]: 'arbitrum',
-  [ChainId.ARBITRUM_GOERLI]: 'arbitrum',
-  [ChainId.POLYGON_ZKEVM]: 'polygon-zkevm',
-  [ChainId.POLYGON_ZKEVM_TESTNET]: 'polygon-zkevm',
-  [ChainId.ZKSYNC]: 'zksync',
-  [ChainId.ZKSYNC_TESTNET]: 'zksync',
-  [ChainId.LINEA]: 'linea',
-  [ChainId.LINEA_TESTNET]: 'linea',
-  [ChainId.OPBNB]: 'opbnb',
-  [ChainId.OPBNB_TESTNET]: 'opbnb',
-  [ChainId.BASE]: 'base',
-  [ChainId.BASE_TESTNET]: 'base',
-  [ChainId.SEPOLIA]: 'ethereum',
-  [ChainId.ARBITRUM_SEPOLIA]: 'arbitrum',
-  [ChainId.BASE_SEPOLIA]: 'base',
+  // [ChainId.BSC_TESTNET]: 'bsc',
+  // [ChainId.ARBITRUM_ONE]: 'arbitrum',
+  // [ChainId.ARBITRUM_GOERLI]: 'arbitrum',
+  // [ChainId.POLYGON_ZKEVM]: 'polygon-zkevm',
+  // [ChainId.POLYGON_ZKEVM_TESTNET]: 'polygon-zkevm',
+  // [ChainId.ZKSYNC]: 'zksync',
+  // [ChainId.ZKSYNC_TESTNET]: 'zksync',
+  // [ChainId.LINEA]: 'linea',
+  // [ChainId.LINEA_TESTNET]: 'linea',
+  // [ChainId.OPBNB]: 'opbnb',
+  // [ChainId.OPBNB_TESTNET]: 'opbnb',
+  // [ChainId.BASE]: 'base',
+  // [ChainId.BASE_TESTNET]: 'base',
+  // [ChainId.SEPOLIA]: 'ethereum',
+  // [ChainId.ARBITRUM_SEPOLIA]: 'arbitrum',
+  // [ChainId.BASE_SEPOLIA]: 'base',
+  [ChainId.DENERGY]: 'denergy'
 } as const
 
 export const chainNameToChainId = Object.entries(chainNames).reduce((acc, [chainId, chainName]) => {
@@ -98,4 +101,5 @@ export const defiLlamaChainNames: Record<ChainId, string> = {
   [ChainId.SEPOLIA]: '',
   [ChainId.ARBITRUM_SEPOLIA]: '',
   [ChainId.BASE_SEPOLIA]: '',
+  [ChainId.DENERGY]: ''
 }

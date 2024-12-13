@@ -11,14 +11,25 @@ export const ChainLogo = memo(
     ...props
   }: { chainId?: number; width?: number; height?: number } & SpaceProps) => {
     const icon = chainId ? (
-      <Image
-        alt={`chain-${chainId}`}
-        style={{ maxHeight: `${height}px` }}
-        src={`https://assets.pancakeswap.finance/web/chains/${chainId}.png`}
-        width={width}
-        height={height}
-        unoptimized
-      />
+      chainId === 2222 ? (
+        <Image
+          alt={`chain-${chainId}`}
+          style={{ maxHeight: `${height}px` }}
+          src={`https://denergy-assets.s3.ap-south-1.amazonaws.com/drex-favicon-16x16.png`}
+          width={width}
+          height={height}
+          unoptimized
+        />
+      ) : (
+        <Image
+          alt={`chain-${chainId}`}
+          style={{ maxHeight: `${height}px` }}
+          src={`https://assets.pancakeswap.finance/web/chains/${chainId}.png`}
+          width={width}
+          height={height}
+          unoptimized
+        />
+      )
     ) : (
       <HelpIcon width={width} height={height} />
     );

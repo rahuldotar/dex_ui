@@ -37,7 +37,11 @@ const NetworkSelect = () => {
           href={`${APEX_DOMAIN}?chain=${chain.chainName}`}
         >
           <Image
-            src={`${ASSETS_CDN}/web/chains/${chain.id}.png`}
+            src={
+              chain.id === 2222
+                ? `https://denergy-assets.s3.ap-south-1.amazonaws.com/drex-favicon-16x16.png`
+                : `${ASSETS_CDN}/web/chains/${chain.id}.png`
+            }
             width={24}
             height={24}
             unoptimized

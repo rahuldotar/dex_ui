@@ -12,6 +12,7 @@ export default {
 const chains = [
   { label: "BNB", value: "BNB", icon: "https://assets.pancakeswap.finance/web/chains/56.png" },
   { label: "Ethereum", value: "Ethereum", icon: "https://assets.pancakeswap.finance/web/chains/1.png" },
+  { label: "Denergy", value: "Denergy", icon: "https://denergy-assets.s3.ap-south-1.amazonaws.com/drex-favicon-16x16.png" },
   { label: "Polygon zkEVM", value: "Polygon zkEVM", icon: "https://assets.pancakeswap.finance/web/chains/1101.png" },
   { label: "zkSync Era", value: "zkSync Era", icon: "https://assets.pancakeswap.finance/web/chains/324.png" },
   { label: "Arbitrum One", value: "Arbitrum One", icon: "https://assets.pancakeswap.finance/web/chains/42161.png" },

@@ -167,6 +167,14 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io',
   ),
+  [ChainId.DENERGY]: new ERC20Token( // Update
+    ChainId.DENERGY,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WWATT',
+    'Wrapped Watt',
+    'https://weth.io',
+  ),
 }
 
 export const WBNB = {
@@ -214,6 +222,7 @@ export const WBNB = {
 
 export const WNATIVE = {
   [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
+  [ChainId.DENERGY]: WETH9[ChainId.DENERGY], // Update
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
@@ -276,6 +285,11 @@ export const NATIVE = {
   [ChainId.SEPOLIA]: {
     name: 'Sepolia Ether',
     symbol: 'SEP',
+    decimals: 18,
+  },
+  [ChainId.DENERGY]: { // Update
+    name: 'WATT',
+    symbol: 'WATT',
     decimals: 18,
   },
   [ChainId.ARBITRUM_SEPOLIA]: {

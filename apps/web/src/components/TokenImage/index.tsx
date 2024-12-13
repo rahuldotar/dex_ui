@@ -44,8 +44,12 @@ export const getImageUrlsFromToken = (token: Currency & { logoURI?: string | und
   return [...uriLocations, imageUri]
 }
 
-export const getChainLogoUrlFromChainId = (chainId: number) =>
-  `https://assets.pancakeswap.finance/web/chains/${chainId}.png`
+export const getChainLogoUrlFromChainId = (chainId: number) => {
+  if (chainId === 2222) {
+    return `https://denergy-assets.s3.ap-south-1.amazonaws.com/drex-favicon-16x16.png`;
+  }
+  return `https://assets.pancakeswap.finance/web/chains/${chainId}.png`;
+};
 
 export const TokenPairImage: React.FC<React.PropsWithChildren<TokenPairImageProps>> = ({
   primaryToken,

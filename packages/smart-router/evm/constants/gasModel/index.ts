@@ -20,10 +20,12 @@ import {
   scrollSepoliaTokens,
   zkSyncTestnetTokens,
   zksyncTokens,
+  denergyTokens
 } from '@pancakeswap/tokens'
 
 export const usdGasTokensByChain = {
   [ChainId.ETHEREUM]: [ethereumTokens.usdt],
+  [ChainId.DENERGY]: [denergyTokens.usdc], // Update
   [ChainId.GOERLI]: [goerliTestnetTokens.usdc],
   [ChainId.BSC]: [bscTokens.usdt],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.usdt],

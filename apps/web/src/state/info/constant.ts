@@ -5,22 +5,23 @@ import { ChainId, isTestnetChainId } from '@pancakeswap/chains'
 import { STABLE_SUPPORTED_CHAIN_IDS } from '@pancakeswap/stable-swap-sdk'
 import { BSC_TOKEN_WHITELIST, ETH_TOKEN_BLACKLIST, ETH_TOKEN_WHITELIST, TOKEN_BLACKLIST } from 'config/constants/info'
 import mapValues from 'lodash/mapValues'
-import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, zkSync } from 'wagmi/chains'
+// import { arbitrum, base, bsc, linea, mainnet, opBNB, polygonZkEvm, zkSync } from 'wagmi/chains'
 
-export type MultiChainName = 'BSC' | 'ETH' | 'POLYGON_ZKEVM' | 'ZKSYNC' | 'ARB' | 'LINEA' | 'BASE' | 'OPBNB'
+export type MultiChainName = 'DENERGY'
 
 export type MultiChainNameExtend = MultiChainName | 'BSC_TESTNET' | 'ZKSYNC_TESTNET'
 
 export const multiChainName: Record<number | string, MultiChainNameExtend> = {
-  [ChainId.BSC]: 'BSC',
-  [ChainId.ETHEREUM]: 'ETH',
-  [ChainId.BSC_TESTNET]: 'BSC_TESTNET',
-  [ChainId.POLYGON_ZKEVM]: 'POLYGON_ZKEVM',
-  [ChainId.ZKSYNC]: 'ZKSYNC',
-  [ChainId.LINEA]: 'LINEA',
-  [ChainId.BASE]: 'BASE',
-  [ChainId.OPBNB]: 'OPBNB',
-  [ChainId.ARBITRUM_ONE]: 'ARB',
+  // [ChainId.BSC]: 'BSC',
+  // [ChainId.ETHEREUM]: 'ETH',
+  // [ChainId.BSC_TESTNET]: 'BSC_TESTNET',
+  // [ChainId.POLYGON_ZKEVM]: 'POLYGON_ZKEVM',
+  // [ChainId.ZKSYNC]: 'ZKSYNC',
+  // [ChainId.LINEA]: 'LINEA',
+  // [ChainId.BASE]: 'BASE',
+  // [ChainId.OPBNB]: 'OPBNB',
+  // [ChainId.ARBITRUM_ONE]: 'ARB',
+  [ChainId.DENERGY]: 'DENERGY'
 }
 
 export const multiChainShortName: Record<number, string> = {
@@ -28,36 +29,39 @@ export const multiChainShortName: Record<number, string> = {
 }
 
 export const multiChainQueryMainToken: Record<MultiChainName, string> = {
-  BSC: 'BNB',
-  ETH: 'ETH',
-  POLYGON_ZKEVM: 'ETH',
-  ZKSYNC: 'ETH',
-  ARB: 'ETH',
-  LINEA: 'ETH',
-  BASE: 'ETH',
-  OPBNB: 'ETH',
+  // BSC: 'BNB',
+  // ETH: 'ETH',
+  // POLYGON_ZKEVM: 'ETH',
+  // ZKSYNC: 'ETH',
+  // ARB: 'ETH',
+  // LINEA: 'ETH',
+  // BASE: 'ETH',
+  // OPBNB: 'ETH',
+  DENERGY: 'WATT'
 }
 
 export const multiChainId: Record<MultiChainName, ChainId> = {
-  BSC: ChainId.BSC,
-  ETH: ChainId.ETHEREUM,
-  POLYGON_ZKEVM: ChainId.POLYGON_ZKEVM,
-  ZKSYNC: ChainId.ZKSYNC,
-  ARB: ChainId.ARBITRUM_ONE,
-  LINEA: ChainId.LINEA,
-  BASE: ChainId.BASE,
-  OPBNB: ChainId.OPBNB,
+  // BSC: ChainId.BSC,
+  // ETH: ChainId.ETHEREUM,
+  // POLYGON_ZKEVM: ChainId.POLYGON_ZKEVM,
+  // ZKSYNC: ChainId.ZKSYNC,
+  // ARB: ChainId.ARBITRUM_ONE,
+  // LINEA: ChainId.LINEA,
+  // BASE: ChainId.BASE,
+  // OPBNB: ChainId.OPBNB,
+  DENERGY: ChainId.DENERGY
 }
 
 export const multiChainPaths = {
-  [ChainId.BSC]: '',
-  [ChainId.ETHEREUM]: '/eth',
-  [ChainId.POLYGON_ZKEVM]: '/polygon-zkevm',
-  [ChainId.ZKSYNC]: '/zksync',
-  [ChainId.ARBITRUM_ONE]: '/arb',
-  [ChainId.LINEA]: '/linea',
-  [ChainId.BASE]: '/base',
-  [ChainId.OPBNB]: '/opbnb',
+  // [ChainId.BSC]: '',
+  // [ChainId.ETHEREUM]: '/eth',
+  // [ChainId.POLYGON_ZKEVM]: '/polygon-zkevm',
+  // [ChainId.ZKSYNC]: '/zksync',
+  // [ChainId.ARBITRUM_ONE]: '/arb',
+  // [ChainId.LINEA]: '/linea',
+  // [ChainId.BASE]: '/base',
+  // [ChainId.OPBNB]: '/opbnb',
+  [ChainId.DENERGY]: '/denergy',
 }
 
 export const multiChainQueryStableClient = STABLE_SUPPORTED_CHAIN_IDS.reduce((acc, chainId) => {
@@ -81,22 +85,23 @@ export const STABLESWAP_SUBGRAPHS_START_BLOCK = {
 }
 
 export const multiChainScan: Record<MultiChainName, string> = {
-  BSC: bsc.blockExplorers.default.name,
-  ETH: mainnet.blockExplorers.default.name,
-  POLYGON_ZKEVM: polygonZkEvm.blockExplorers.default.name,
-  ZKSYNC: zkSync.blockExplorers.default.name,
-  ARB: arbitrum.blockExplorers.default.name,
-  LINEA: linea.blockExplorers.default.name,
-  BASE: base.blockExplorers.default.name,
-  OPBNB: opBNB.blockExplorers.default.name,
+  // BSC: bsc.blockExplorers.default.name,
+  // ETH: mainnet.blockExplorers.default.name,
+  // POLYGON_ZKEVM: polygonZkEvm.blockExplorers.default.name,
+  // ZKSYNC: zkSync.blockExplorers.default.name,
+  // ARB: arbitrum.blockExplorers.default.name,
+  // LINEA: linea.blockExplorers.default.name,
+  // BASE: base.blockExplorers.default.name,
+  // OPBNB: opBNB.blockExplorers.default.name,
+  DENERGY: 'http://testnet.denergychain.com',
 }
 
 /** Override Explorer Names if default for chain is "Etherscan" */
 export const multiChainScanName: Partial<Record<ChainId, string>> = {
-  [ChainId.ZKSYNC]: 'ZKSync Explorer',
-  [ChainId.ZKSYNC_TESTNET]: 'ZKSync Explorer',
-  [ChainId.LINEA]: 'LineaScan',
-  [ChainId.LINEA_TESTNET]: 'LineaScan',
+  // [ChainId.ZKSYNC]: 'ZKSync Explorer',
+  // [ChainId.ZKSYNC_TESTNET]: 'ZKSync Explorer',
+  // [ChainId.LINEA]: 'LineaScan',
+  // [ChainId.LINEA_TESTNET]: 'LineaScan',
 }
 
 export const multiChainTokenBlackList: Record<MultiChainName, string[]> = mapValues(
@@ -109,6 +114,7 @@ export const multiChainTokenBlackList: Record<MultiChainName, string[]> = mapVal
     LINEA: ['0x'],
     BASE: ['0x'],
     OPBNB: ['0x'],
+    DENERGY: ['0x'],
   },
   (val) => val.map((address) => address.toLowerCase()),
 )
@@ -123,6 +129,7 @@ export const multiChainTokenWhiteList: Record<MultiChainName, string[]> = mapVal
     LINEA: [],
     BASE: [],
     OPBNB: [],
+    DENERGY: [],
   },
   (val) => val.map((address) => address.toLowerCase()),
 )

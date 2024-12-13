@@ -19,19 +19,21 @@ export enum ChainId {
   BASE_TESTNET = 84531,
   BASE_SEPOLIA = 84532,
   SEPOLIA = 11155111,
+  DENERGY=2222
 }
 
 export const testnetChainIds = [
-  ChainId.GOERLI,
-  ChainId.BSC_TESTNET,
-  ChainId.ZKSYNC_TESTNET,
-  ChainId.OPBNB_TESTNET,
-  ChainId.POLYGON_ZKEVM_TESTNET,
-  ChainId.ARBITRUM_GOERLI,
-  ChainId.SCROLL_SEPOLIA,
-  ChainId.LINEA_TESTNET,
-  ChainId.BASE_TESTNET,
-  ChainId.SEPOLIA,
-  ChainId.ARBITRUM_SEPOLIA,
-  ChainId.BASE_SEPOLIA,
+  // ChainId.GOERLI,
+  // ChainId.BSC_TESTNET,
+  // ChainId.ZKSYNC_TESTNET,
+  // ChainId.OPBNB_TESTNET,
+  // ChainId.POLYGON_ZKEVM_TESTNET,
+  // ChainId.ARBITRUM_GOERLI,
+  // ChainId.SCROLL_SEPOLIA,
+  // ChainId.LINEA_TESTNET,
+  // ChainId.BASE_TESTNET,
+  // ChainId.SEPOLIA,
+  // ChainId.ARBITRUM_SEPOLIA,
+  // ChainId.BASE_SEPOLIA,
+  ChainId.DENERGY,
 ]

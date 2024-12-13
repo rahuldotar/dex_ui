@@ -357,6 +357,14 @@ export const USDC = {
     'USD Coin',
     'https://www.centre.io/usdc',
   ),
+  [ChainId.DENERGY]: new ERC20Token( // Update
+    ChainId.DENERGY,
+    '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
+    6,
+    'USDC',
+    'USD Coin',
+    'https://www.centre.io/usdc',
+  ),
 }
 
 export const USDT = {
@@ -499,6 +507,7 @@ export const WBTC_ETH = new ERC20Token(
 export const STABLE_COIN = {
   [ChainId.ETHEREUM]: USDT[ChainId.ETHEREUM],
   [ChainId.GOERLI]: USDC[ChainId.GOERLI],
+  [ChainId.DENERGY]: USDC[ChainId.DENERGY],
   [ChainId.BSC]: USDT[ChainId.BSC],
   [ChainId.BSC_TESTNET]: BUSD[ChainId.BSC_TESTNET],
   [ChainId.ARBITRUM_ONE]: USDC[ChainId.ARBITRUM_ONE],

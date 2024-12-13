@@ -27,14 +27,14 @@ import { chains } from 'utils/wagmi'
 import { useAccount } from 'wagmi'
 import { ChainLogo } from './Logo/ChainLogo'
 
-const AptosChain = {
-  id: 1,
-  name: 'Aptos',
-}
+// const AptosChain = {
+//   id: 1,
+//   name: 'Aptos',
+// }
 
 const NetworkSelect = ({ switchNetwork, chainId, isWrongNetwork }) => {
   const { t } = useTranslation()
-  const [showTestnet] = useUserShowTestnet()
+  // const [showTestnet] = useUserShowTestnet()
 
   return (
     <>
@@ -44,10 +44,11 @@ const NetworkSelect = ({ switchNetwork, chainId, isWrongNetwork }) => {
       <UserMenuDivider />
       {chains
         .filter((chain) => {
-          if (chain.id === chainId) return true
-          if ('testnet' in chain && chain.testnet) {
-            return showTestnet
-          }
+          if(chain.id !== 2222) return false
+          // if (chain.id === chainId) return true
+          // if ('testnet' in chain && chain.testnet) {
+          //   return showTestnet
+          // }
           return true
         })
         .map((chain) => (
@@ -66,7 +67,7 @@ const NetworkSelect = ({ switchNetwork, chainId, isWrongNetwork }) => {
             </Text>
           </UserMenuItem>
         ))}
-      <UserMenuItem
+      {/* <UserMenuItem
         key={`aptos-${AptosChain.id}`}
         style={{ justifyContent: 'flex-start' }}
         as="a"
@@ -83,7 +84,7 @@ const NetworkSelect = ({ switchNetwork, chainId, isWrongNetwork }) => {
         <Text color="text" pl="12px">
           {AptosChain.name}
         </Text>
-      </UserMenuItem>
+      </UserMenuItem> */}
     </>
   )
 }
@@ -104,7 +105,7 @@ const WrongNetworkSelect = ({ switchNetwork, chainId }) => {
     },
   )
   const { chain } = useAccount()
-  const localChainId = useLocalNetworkChain() || ChainId.BSC
+  const localChainId = useLocalNetworkChain() || ChainId.DENERGY
 
   const localChainName = chains.find((c) => c.id === localChainId)?.name ?? 'BSC'
 
@@ -163,6 +164,7 @@ const SHORT_SYMBOL = {
   [ChainId.SEPOLIA]: 'sepolia',
   [ChainId.BASE_SEPOLIA]: 'Base Sepolia',
   [ChainId.ARBITRUM_SEPOLIA]: 'Arb Sepolia',
+  [ChainId.DENERGY]: 'DENERGY'
 } as const satisfies Record<ChainId, string>
 
 export const NetworkSwitcher = () => {

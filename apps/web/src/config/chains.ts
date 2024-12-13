@@ -52,25 +52,50 @@ const bsc = {
   },
 } satisfies Chain
 
+const denergy ={
+  id: 2222,
+  name: 'DENERGY',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'WATT',
+    symbol: 'WATT',
+  },
+  rpcUrls: {
+    default: { http: ['https://rpc.d.energy'] },
+  },
+  blockExplorers: {
+    default: {
+      name: 'BscScan',
+      url: 'http://testnet.denergychain.com/',
+      apiUrl: 'http://testnet.denergychain.com/api',
+    },
+  },
+  contracts: {
+    multicall3: {
+      address: '0xca11bde05977b3631167028862be2a173976ca11',
+      blockCreated: 15921452,
+    },
+  },
+} satisfies Chain
 /**
  * Controls some L2 specific behavior, e.g. slippage tolerance, special UI behavior.
  * The expectation is that all of these networks have immediate transaction confirmation.
  */
 export const L2_CHAIN_IDS: ChainId[] = [
-  ChainId.ARBITRUM_ONE,
-  ChainId.ARBITRUM_GOERLI,
-  ChainId.POLYGON_ZKEVM,
-  ChainId.POLYGON_ZKEVM_TESTNET,
-  ChainId.ZKSYNC,
-  ChainId.ZKSYNC_TESTNET,
-  ChainId.LINEA_TESTNET,
-  ChainId.LINEA,
-  ChainId.BASE,
-  ChainId.BASE_TESTNET,
-  ChainId.OPBNB,
-  ChainId.OPBNB_TESTNET,
-  ChainId.ARBITRUM_SEPOLIA,
-  ChainId.BASE_SEPOLIA,
+  // ChainId.ARBITRUM_ONE,
+  // ChainId.ARBITRUM_GOERLI,
+  // ChainId.POLYGON_ZKEVM,
+  // ChainId.POLYGON_ZKEVM_TESTNET,
+  // ChainId.ZKSYNC,
+  // ChainId.ZKSYNC_TESTNET,
+  // ChainId.LINEA_TESTNET,
+  // ChainId.LINEA,
+  // ChainId.BASE,
+  // ChainId.BASE_TESTNET,
+  // ChainId.OPBNB,
+  // ChainId.OPBNB_TESTNET,
+  // ChainId.ARBITRUM_SEPOLIA,
+  // ChainId.BASE_SEPOLIA,
 ]
 
 export const CHAINS: [Chain, ...Chain[]] = [
@@ -93,4 +118,5 @@ export const CHAINS: [Chain, ...Chain[]] = [
   opBNB,
   opBNBTestnet,
   scrollSepolia,
+  denergy
 ]

@@ -11,7 +11,11 @@ export const ChainLogo = memo(
         <Image
           alt={`chain-${chainId}`}
           style={{ maxHeight: `${height}px` }}
-          src={`${ASSET_CDN}/web/chains/${chainId}.png`}
+          src={
+            chainId === 2222
+              ? `https://denergy-assets.s3.ap-south-1.amazonaws.com/drex-favicon-16x16.png`
+              : `${ASSET_CDN}/web/chains/${chainId}.png`
+          }
           width={width}
           height={height}
           unoptimized
