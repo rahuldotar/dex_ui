@@ -4,8 +4,8 @@ import { CommonBasesType } from 'components/SearchModal/types'
 import { Text } from '@pancakeswap/uikit'
 import { FlipButton } from 'views/SwapSimplify/V4Swap/FlipButton'
 import { useIsWrapping } from 'views/Swap/V3Swap/hooks'
-import { FormContainer } from './FormContainer'
 import { useDefaultsFromURLSearch } from 'state/swap/hooks'
+import { FormContainer } from './FormContainer'
 
 interface Props {
   bridgeType: BridgeType
