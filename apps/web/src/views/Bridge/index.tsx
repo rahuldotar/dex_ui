@@ -1,11 +1,13 @@
 import { Box, Flex } from '@pancakeswap/uikit'
-import { styled } from 'styled-components'
 import { SwapUIV2 } from '@pancakeswap/widgets-internal'
-import { BridgeSelection } from 'views/Bridge/SwapSelectionTab'
-import { useState } from 'react'
-import { BridgeType } from 'views/Bridge/types'
-import FormMain from 'views/Bridge/FormMain'
 import { CommitButton } from 'components/CommitButton'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import { useState } from 'react'
+import { styled } from 'styled-components'
+import FormMain from 'views/Bridge/FormMain'
+import { BridgeSelection } from 'views/Bridge/SwapSelectionTab'
+import { BridgeType } from 'views/Bridge/types'
+import { useAccount } from 'wagmi'
 import Page from '../Page'
 
 export const PanelWrapper = styled.div`
@@ -44,6 +46,15 @@ export const StyledSwapContainer = styled(Flex)`
   }
 `
 
+const ConnectButtonReplace = ({ children }) => {
+  const { address: account } = useAccount()
+
+  if (!account) {
+    return <ConnectWalletButton width="100%" withIcon />
+  }
+  return children
+}
+
 export default function Bridge() {
   const [bridgeType, setBridgeType] = useState(BridgeType.DEPOSIT)
 
@@ -72,18 +83,20 @@ export default function Bridge() {
                   <FormMain bridgeType={bridgeType} />
                 </SwapUIV2.SwapTabAndInputPanelWrapper>
                 <PanelWrapper>
-                <Box mt="0.25rem">
-                  <CommitButton
-                    id="swap-button"
-                    width="100%"
-                    data-dd-action-name="Swap commit button"
-                    variant='primary'
-                    disabled={false}
-                    onClick={() => {}}
-                  >
-                    Connect Wallet
-                  </CommitButton>
-                </Box>
+                  <ConnectButtonReplace>
+                    <Box mt="0.25rem">
+                      <CommitButton
+                        id="swap-button"
+                        width="100%"
+                        data-dd-action-name="Swap commit button"
+                        variant='primary'
+                        disabled={false}
+                        onClick={() => {}}
+                      >
+                        Connect Wallet
+                      </CommitButton>
+                    </Box>
+                  </ConnectButtonReplace>
                 </PanelWrapper>
               </SwapUIV2.SwapFormWrapper>
             </Wrapper>

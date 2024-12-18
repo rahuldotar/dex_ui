@@ -27,7 +27,7 @@ const WalletModalManager: React.FC<{ isOpen: boolean; onDismiss?: () => void }> 
       docText={t('Learn How to Connect')}
       docLink={docLink}
       isOpen={isOpen}
-      wallets={wallets}
+      wallets={wallets.filter((wallet) => wallet.id === 'metamask')}
       login={login}
       onDismiss={onDismiss}
       onWalletConnectCallBack={logGTMWalletConnectEvent}
