@@ -69,10 +69,10 @@ const config: (
         //   confirmModalId: 'optionsConfirmModal',
         //   type: DropdownMenuItemType.EXTERNAL_LINK,
         // },
-        {
-          label: t('Buy Crypto'),
-          href: '/buy-crypto',
-        },
+        // {
+        //   label: t('Buy Crypto'),
+        //   href: '/buy-crypto',
+        // },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
     // {
@@ -132,6 +132,10 @@ const config: (
     //     },
     //   ].map((item) => addMenuItemSupported(item, chainId)),
     // },
+    {
+      label: t('Buy Crypto'),
+      href: '/buy-crypto',
+    },
     {
       label: t('Bridge'),
       href: '/bridge',
