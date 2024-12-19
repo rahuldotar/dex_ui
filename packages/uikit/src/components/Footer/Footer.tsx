@@ -45,9 +45,9 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
       justifyContent="center"
     >
       <Flex flexDirection="column" width={["100%", null, "1200px;"]}>
-        <StyledIconMobileContainer display={["block", null, "none"]}>
-          <LogoWithTextIcon width="130px" />
-        </StyledIconMobileContainer>
+        {/* <StyledIconMobileContainer display={["block", null, "none"]}> */}
+        {/*   <LogoWithTextIcon width="130px" /> */}
+        {/* </StyledIconMobileContainer> */}
         <Flex
           order={[2, null, 1]}
           flexDirection={["column", "column", "column", "column", "row", "row"]}

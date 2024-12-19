@@ -17,37 +17,29 @@ export const footerLinks: (t: ContextApi["t"]) => FooterLinkType[] = (t) => [
         label: t("Play"),
         href: "https://pancakeswap.finance/prediction",
       },
-      {
-        label: t("veCAKE"),
-        href: "https://pancakeswap.finance/cake-staking",
-      },
-      {
-        label: t("Merchandise"),
-        href: "https://merch.pancakeswap.finance/",
-      },
     ],
   },
-  {
-    label: "Business",
-    items: [
-      {
-        label: t("CAKE Incentives"),
-        href: "https://docs.pancakeswap.finance/ecosystem-and-partnerships/business-partnerships/syrup-pools-and-farms",
-      },
-      {
-        label: t("Staking Pools"),
-        href: "https://pancakeswap.finance/pools",
-      },
-      {
-        label: t("Token Launches"),
-        href: "https://docs.pancakeswap.finance/ecosystem-and-partnerships/business-partnerships/initial-farm-offerings-ifos",
-      },
-      {
-        label: t("Brand Assets"),
-        href: "https://docs.pancakeswap.finance/ecosystem-and-partnerships/brand",
-      },
-    ],
-  },
+  // {
+  //   label: "Business",
+  //   items: [
+  //     {
+  //       label: t("CAKE Incentives"),
+  //       href: "https://docs.pancakeswap.finance/ecosystem-and-partnerships/business-partnerships/syrup-pools-and-farms",
+  //     },
+  //     {
+  //       label: t("Staking Pools"),
+  //       href: "https://pancakeswap.finance/pools",
+  //     },
+  //     {
+  //       label: t("Token Launches"),
+  //       href: "https://docs.pancakeswap.finance/ecosystem-and-partnerships/business-partnerships/initial-farm-offerings-ifos",
+  //     },
+  //     {
+  //       label: t("Brand Assets"),
+  //       href: "https://docs.pancakeswap.finance/ecosystem-and-partnerships/brand",
+  //     },
+  //   ],
+  // },
   {
     label: t("Developers"),
     items: [
