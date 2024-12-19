@@ -42,39 +42,39 @@ const config: (
   chainId?: number,
 ) => ConfigMenuItemsType[] = (t, isDark, languageCode, chainId) =>
   [
-    {
-      label: t('Trade'),
-      icon: SwapIcon,
-      fillIcon: SwapFillIcon,
-      href: '/',
-      hideSubNav: true,
-      items: [
-        {
-          label: t('Swap'),
-          href: '/',
-        },
-        // {
-        //   label: t('Perps'),
-        //   href: getPerpetualUrl({
-        //     chainId,
-        //     languageCode,
-        //     isDark,
-        //   }),
-        //   confirmModalId: 'perpConfirmModal',
-        //   type: DropdownMenuItemType.EXTERNAL_LINK,
-        // },
-        // {
-        //   label: t('Options'),
-        //   href: getOptionsUrl(),
-        //   confirmModalId: 'optionsConfirmModal',
-        //   type: DropdownMenuItemType.EXTERNAL_LINK,
-        // },
-        // {
-        //   label: t('Buy Crypto'),
-        //   href: '/buy-crypto',
-        // },
-      ].map((item) => addMenuItemSupported(item, chainId)),
-    },
+    // {
+    //   label: t('Trade'),
+    //   icon: SwapIcon,
+    //   fillIcon: SwapFillIcon,
+    //   href: '/',
+    //   hideSubNav: true,
+    //   items: [
+    //     {
+    //       label: t('Swap'),
+    //       href: '/',
+    //     },
+    //     {
+    //       label: t('Perps'),
+    //       href: getPerpetualUrl({
+    //         chainId,
+    //         languageCode,
+    //         isDark,
+    //       }),
+    //       confirmModalId: 'perpConfirmModal',
+    //       type: DropdownMenuItemType.EXTERNAL_LINK,
+    //     },
+    //     {
+    //       label: t('Options'),
+    //       href: getOptionsUrl(),
+    //       confirmModalId: 'optionsConfirmModal',
+    //       type: DropdownMenuItemType.EXTERNAL_LINK,
+    //     },
+    //     {
+    //       label: t('Buy Crypto'),
+    //       href: '/buy-crypto',
+    //     },
+    //   ].map((item) => addMenuItemSupported(item, chainId)),
+    // },
     // {
     //   label: t('Earn'),
     //   href: '/liquidity/pools',
@@ -133,7 +133,11 @@ const config: (
     //   ].map((item) => addMenuItemSupported(item, chainId)),
     // },
     {
-      label: t('Buy Crypto'),
+      label: t('Trad'),
+      href: '/',
+    },
+    {
+      label: t('Buy'),
       href: '/buy-crypto',
     },
     {
@@ -191,37 +195,37 @@ const config: (
           label: t('Info'),
           href: '/info/v3',
         },
-        {
-          label: t('IFO'),
-          href: '/ifo',
-          image: '/images/ifos/ifo-bunny.png',
-          overrideSubNavItems: [
-            {
-              label: t('Latest'),
-              href: '/ifo',
-            },
-            {
-              label: t('Finished'),
-              href: '/ifo/history',
-            },
-          ],
-        },
-        {
-          label: t('Voting'),
-          image: '/images/voting/voting-bunny.png',
-          items: [
-            {
-              label: t('Proposals'),
-              href: '/voting',
-              supportChainIds: SUPPORT_ONLY_BSC,
-            },
-            {
-              label: t('Gauges'),
-              href: '/gauges-voting',
-              supportChainIds: SUPPORT_CAKE_STAKING,
-            },
-          ].map((item) => addMenuItemSupported(item, chainId)),
-        },
+        // {
+        //   label: t('IFO'),
+        //   href: '/ifo',
+        //   image: '/images/ifos/ifo-bunny.png',
+        //   overrideSubNavItems: [
+        //     {
+        //       label: t('Latest'),
+        //       href: '/ifo',
+        //     },
+        //     {
+        //       label: t('Finished'),
+        //       href: '/ifo/history',
+        //     },
+        //   ],
+        // },
+        // {
+        //   label: t('Voting'),
+        //   image: '/images/voting/voting-bunny.png',
+        //   items: [
+        //     {
+        //       label: t('Proposals'),
+        //       href: '/voting',
+        //       supportChainIds: SUPPORT_ONLY_BSC,
+        //     },
+        //     {
+        //       label: t('Gauges'),
+        //       href: '/gauges-voting',
+        //       supportChainIds: SUPPORT_CAKE_STAKING,
+        //     },
+        //   ].map((item) => addMenuItemSupported(item, chainId)),
+        // },
         {
           type: DropdownMenuItemType.DIVIDER,
         },

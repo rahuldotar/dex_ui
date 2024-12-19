@@ -161,7 +161,7 @@ export const MobileCard = ({
 
   return shouldRender && !isDesktop && show ? (
     <StaticContainer {...props}>
-      <AdPlayer isDismissible={isDismissible} forceMobile={forceMobile} />
+      {/* <AdPlayer isDismissible={isDismissible} forceMobile={forceMobile} /> */}
     </StaticContainer>
   ) : null
 }

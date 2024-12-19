@@ -184,8 +184,8 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
       <ShowMenu>
         <Layout>
           <Component {...pageProps} />
-          <AdPanel.MobileCard shouldRender={!shouldRenderOnPages(layoutMobileAdIgnoredPages)} mt="4px" mb="12px" />
-          <AdPanel.DesktopCard shouldRender={!shouldRenderOnPages(layoutDesktopAdIgnoredPages)} />
+          {/* <AdPanel.MobileCard shouldRender={!shouldRenderOnPages(layoutMobileAdIgnoredPages)} mt="4px" mb="12px" /> */}
+          {/* <AdPanel.DesktopCard shouldRender={!shouldRenderOnPages(layoutDesktopAdIgnoredPages)} /> */}
         </Layout>
       </ShowMenu>
       <EasterEgg iterations={2} />

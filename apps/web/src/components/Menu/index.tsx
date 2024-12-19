@@ -119,7 +119,8 @@ const Menu = (props) => {
         </>
       }
       chainId={chainId}
-      banner={showPhishingWarningBanner && typeof window !== 'undefined' && <PhishingWarningBanner />}
+      // banner={showPhishingWarningBanner && typeof window !== 'undefined' && <PhishingWarningBanner />}
+      banner={false}
       isDark={isDark}
       toggleTheme={toggleTheme}
       currentLang={currentLanguage.code}
