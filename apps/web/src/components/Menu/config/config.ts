@@ -192,7 +192,7 @@ const config: (
       hideSubNav: true,
       items: [
         {
-          label: t('Info'),
+          label: t('Wattswaps Info & Analytics'),
           href: '/info/v3',
         },
         // {
@@ -230,12 +230,12 @@ const config: (
           type: DropdownMenuItemType.DIVIDER,
         },
         {
-          label: t('Blog'),
+          label: t('Go to Blog'),
           href: 'https://blog.pancakeswap.finance',
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },
         {
-          label: t('Docs'),
+          label: t('Go to Docs'),
           href: 'https://docs.pancakeswap.finance',
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },

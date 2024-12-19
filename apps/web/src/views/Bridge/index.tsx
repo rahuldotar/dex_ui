@@ -58,28 +58,15 @@ const ConnectButtonReplace = ({ children }) => {
 export default function Bridge() {
   const [bridgeType, setBridgeType] = useState(BridgeType.DEPOSIT)
 
-  return(
+  return (
     <Page removePadding hideFooterOnDesktop={false} showExternalLink={false} showHelpLink={false}>
-      <Flex
-        width="100%"
-        height="100%"
-        justifyContent="center"
-        position="relative"
-      >
-        <Flex
-          flexDirection="column"
-          alignItems="center"
-          height="100%"
-        >
-          <StyledSwapContainer
-            justifyContent="center"
-            width="100%"
-            style={{ height: '100%' }}
-          >
+      <Flex width="100%" height="100%" justifyContent="center" position="relative">
+        <Flex flexDirection="column" alignItems="center" height="100%">
+          <StyledSwapContainer justifyContent="center" width="100%" style={{ height: '100%' }}>
             <Wrapper height="100%">
               <SwapUIV2.SwapFormWrapper>
-                <SwapUIV2.SwapTabAndInputPanelWrapper>
-                  <BridgeSelection bridgeType={bridgeType} setBridgeType={setBridgeType} />
+                <SwapUIV2.SwapTabAndInputPanelWrapper style={{ marginTop: '42px' }}>
+                  {/* <BridgeSelection bridgeType={bridgeType} setBridgeType={setBridgeType} /> */}
                   <FormMain bridgeType={bridgeType} />
                 </SwapUIV2.SwapTabAndInputPanelWrapper>
                 <PanelWrapper>
@@ -89,7 +76,7 @@ export default function Bridge() {
                         id="swap-button"
                         width="100%"
                         data-dd-action-name="Swap commit button"
-                        variant='primary'
+                        variant="primary"
                         disabled={false}
                         onClick={() => {}}
                       >
