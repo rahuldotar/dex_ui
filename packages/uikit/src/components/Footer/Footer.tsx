@@ -78,11 +78,11 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
               ))}
             </StyledList>
           ))}
-          <Box display={["none", null, "block"]} style={{ background: "#FFF" }}>
+          <Box display={["none", null, "block"]}>
             {isXl ? (
               <img src="/images/denergy-mobile-logo.png" alt="Denergy Logo" />
             ) : (
-              <img src="/images/denergy-logo.png" alt="Denergy Logo" />
+              <img src="/images/denergy-logo-white.png" alt="Denergy Logo" />
             )}
           </Box>
         </Flex>
