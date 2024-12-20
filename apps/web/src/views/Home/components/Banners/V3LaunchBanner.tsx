@@ -59,7 +59,7 @@ const TextBox = styled(Flex)`
 
 const StyledSubheading = styled.div`
   position: relative;
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
@@ -182,7 +182,7 @@ const TitleWrapper = styled(Flex)`
 `
 
 const Title = styled.div`
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 600;
   font-size: 14px;

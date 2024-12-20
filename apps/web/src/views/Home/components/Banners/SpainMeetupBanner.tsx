@@ -32,7 +32,7 @@ const ContentWrapper = styled(FlexGap)`
 
 const StyledHeading = styled.div`
   position: relative;
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 800;
   font-size: 1rem;
@@ -69,7 +69,7 @@ const StyledHeading = styled.div`
 
 const HeadLine = styled.div`
   position: relative;
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 900;
   font-size: 3rem;

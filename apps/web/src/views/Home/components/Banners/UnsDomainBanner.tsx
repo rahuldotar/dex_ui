@@ -27,7 +27,7 @@ const { usnBunny, unsTitleMobile, usnTitle, unsLogo, usnBg } = {
 }
 
 const textStyle = css`
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 800;
   line-height: 98%;
@@ -100,7 +100,7 @@ const StyledSubheading = styled.div`
 `
 
 const MobileSubheading = styled.div`
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 800;
   font-size: 20px;

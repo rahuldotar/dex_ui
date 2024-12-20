@@ -6,7 +6,7 @@ import { useTranslation } from '@pancakeswap/localization'
 const CountDownWrapper = styled.div`
   display: flex;
   background-color: #082814;
-  font-family: Kanit;
+  font-family: Archivo;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;

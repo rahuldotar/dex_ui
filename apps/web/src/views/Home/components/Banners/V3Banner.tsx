@@ -50,7 +50,7 @@ const fading = keyframes`
 `
 const StyledSubheading = styled.div`
   position: relative;
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 900;
   font-size: 25px;
@@ -172,7 +172,7 @@ const RightWrapper = styled.div`
   }
 `
 const Title = styled.div`
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 600;
   font-size: 23px;

@@ -7,7 +7,7 @@ const CountDownWrapper = styled(Box)`
   font-size: 16px;
 
   font-style: normal;
-  font-family: Kanit;
+  font-family: Archivo;
   font-weight: 600;
 
   line-height: 90%;

@@ -45,7 +45,7 @@ const RightWrapper = styled.div`
 
 const Title = styled.div`
   position: relative;
-  font-family: 'Kanit';
+  font-family: 'Archivo';
   font-size: 25.526px;
   font-style: normal;
   font-weight: 800;
