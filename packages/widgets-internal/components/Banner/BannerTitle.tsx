@@ -124,7 +124,7 @@ const FancyText = styled(Text)<{
   ${({ fontSize, lineHeight }) => getFontSpecs({ size: "xxs", fontSize, lineHeight })}
 
   text-shadow: ${(props) => getTextShadow(props.$strokeColor, props.$strokeSize)};
-  font-family: "Kanit", sans-serif;
+  font-family: "Archivo", sans-serif;
 
   @media screen and (min-width: ${breakpoints.xs}px) {
     ${({ fontSize, lineHeight }) => getFontSpecs({ size: "xs", fontSize, lineHeight })}
