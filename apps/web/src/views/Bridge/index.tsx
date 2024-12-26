@@ -32,9 +32,27 @@ const ConnectButtonReplace = ({ children }) => {
 }
 
 export default function Bridge() {
-  const { formState, handleFlip, handleTokenChange, handleAmountChange, getAvailableTokens, networks } = useBridgeForm()
+  const {
+    formState,
+    handleFlip,
+    handleTokenChange,
+    handleAmountChange,
+    getAvailableTokens,
+    networks,
+    isValid,
+    isSubmitting,
+    handleSubmit,
+  } = useBridgeForm()
 
   const availableTokens = getAvailableTokens()
+
+  const onBridgeClick = async () => {
+    const data = await handleSubmit()
+
+    if (data) {
+      console.log('===>', data)
+    }
+  }
 
   return (
     <Page removePadding hideFooterOnDesktop={false} showExternalLink={false} showHelpLink={false}>
@@ -87,10 +105,10 @@ export default function Bridge() {
                         width="100%"
                         data-dd-action-name="Swap commit button"
                         variant="primary"
-                        disabled={false}
-                        onClick={() => {}}
+                        disabled={!isValid || isSubmitting}
+                        onClick={onBridgeClick}
                       >
-                        Connect Wallet
+                        Bridge
                       </CommitButton>
                     </Box>
                   </ConnectButtonReplace>
