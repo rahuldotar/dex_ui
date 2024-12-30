@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo } from 'react'
+import useBridge from 'views/Bridge/useBridge'
 
 // Types
 interface NetworkToken {
@@ -58,6 +59,8 @@ const useBridgeForm = () => {
     fromToken: 'USDC',
     toToken: 'WUSDC',
   })
+
+  const { bridgeUSDCtoWUSDC } = useBridge()
 
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -170,6 +173,8 @@ const useBridgeForm = () => {
         ...formState,
         timestamp: Date.now(),
       }
+
+      await bridgeUSDCtoWUSDC(submitData.toAmount).then(() => {})
 
       return submitData
     } catch (error) {
