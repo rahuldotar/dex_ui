@@ -359,8 +359,8 @@ export const USDC = {
   ),
   [ChainId.DENERGY]: new ERC20Token( // Update
     ChainId.DENERGY,
-    '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
-    6,
+    '0x655189333f2c527B681E523f06BeC42bF436E712',
+    18,
     'USDC',
     'USD Coin',
     'https://www.centre.io/usdc',

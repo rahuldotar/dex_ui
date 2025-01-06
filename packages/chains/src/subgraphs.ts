@@ -45,7 +45,7 @@ export function getV3Subgraphs({ noderealApiKey, theGraphApiKey }: SubgraphParam
     [ChainId.SEPOLIA]: null,
     [ChainId.ARBITRUM_SEPOLIA]: null,
     [ChainId.BASE_SEPOLIA]: null,
-    [ChainId.DENERGY]: 'https://api.studio.thegraph.com/query/45376/exchange-v3-scroll-sepolia/version/latest'
+    [ChainId.DENERGY]: 'https://graph.wattswaps.com/subgraphs/name/pancakeswap/denergy/graphql'
   } as const satisfies Record<ChainId, string | null>
 }
 

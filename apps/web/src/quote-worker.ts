@@ -30,7 +30,9 @@ const fetchWithLogging = async (url: RequestInfo | URL, init?: RequestInit) => {
     size = init.body.toString().length / 1024
   }
 
+  console.log('fetch', url, init)
   const response = await fetch_(url, init)
+  console.log('response', response)
   const end = Date.now()
   if (urlString && size) {
     if (!urlString.includes('datadoghq.com')) {

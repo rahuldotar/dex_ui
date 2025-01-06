@@ -445,7 +445,7 @@ export default function V3FormView({
           }
           bottomContent={() => (
             <Button width="100%" mt="16px" onClick={onAdd}>
-              {t('Add')}
+              {t('Add2')}
             </Button>
           )}
         />
@@ -487,7 +487,7 @@ export default function V3FormView({
       onClick={handleButtonSubmit}
       attemptingTxn={attemptingTxn}
       errorMessage={errorMessage}
-      buttonText={t('Add')}
+      buttonText={t('Add1')}
       depositADisabled={depositADisabled}
       depositBDisabled={depositBDisabled}
     />

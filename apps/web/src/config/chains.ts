@@ -72,7 +72,7 @@ const denergy ={
   },
   contracts: {
     multicall3: {
-      address: '0xca11bde05977b3631167028862be2a173976ca11',
+      address: '0xB8eB5F346F83efc78d13C7e1e430c2eCe1eBa189', // Update
       blockCreated: 15921452,
     },
   },

@@ -9,7 +9,7 @@ export const infoClient = new GraphQLClient(V2_SUBGRAPH_URLS[ChainId.BSC])
 export const v3Clients = {
   [ChainId.ETHEREUM]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.ETHEREUM]),
   [ChainId.GOERLI]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.GOERLI]),
-  [ChainId.DENERGY]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.GOERLI]), // Update
+  [ChainId.DENERGY]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.DENERGY]), // Update
   [ChainId.BSC]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.BSC]),
   [ChainId.BSC_TESTNET]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.BSC_TESTNET]),
   [ChainId.ARBITRUM_ONE]: new GraphQLClient(V3_SUBGRAPH_URLS[ChainId.ARBITRUM_ONE]),

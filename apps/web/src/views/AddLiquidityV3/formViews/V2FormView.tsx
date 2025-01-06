@@ -132,7 +132,7 @@ export default function V2FormView({
           }}
           disabled={buttonDisabled}
         >
-          {errorText || t('Add')}
+          {errorText || t('Add3')}
         </CommitButton>
       </AutoColumn>
     )

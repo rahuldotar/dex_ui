@@ -169,7 +169,7 @@ export const WETH9 = {
   ),
   [ChainId.DENERGY]: new ERC20Token( // Update
     ChainId.DENERGY,
-    '0x4200000000000000000000000000000000000006',
+    '0x8797D351f99F33743A0A3F1D47422b7AD3239292',
     18,
     'WWATT',
     'Wrapped Watt',
