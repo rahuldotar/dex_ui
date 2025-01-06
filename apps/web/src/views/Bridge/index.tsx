@@ -1,50 +1,25 @@
-import { Box, Flex } from '@pancakeswap/uikit'
+import { Box, ChevronDownIcon, Flex } from '@pancakeswap/uikit'
 import { SwapUIV2 } from '@pancakeswap/widgets-internal'
 import { CommitButton } from 'components/CommitButton'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useState } from 'react'
-import { styled } from 'styled-components'
-import FormMain from 'views/Bridge/FormMain'
-import { BridgeSelection } from 'views/Bridge/SwapSelectionTab'
-import { BridgeType } from 'views/Bridge/types'
 import { useAccount } from 'wagmi'
-import Page from '../Page'
-
-export const PanelWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-  padding: 16px;
-  border-radius: 24px;
-  background-color: ${({ theme }) => theme.colors.card};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-`
-
-const Wrapper = styled(Box)`
-  width: 100%;
-  ${({ theme }) => theme.mediaQueries.md} {
-    min-width: 480px;
-    max-width: 480px;
-  }
-`
-
-export const StyledSwapContainer = styled(Flex)`
-  flex-shrink: 0;
-  height: fit-content;
-  padding: 0;
-  ${({ theme }) => theme.mediaQueries.md} {
-    padding: 0 16px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    padding: 0 40px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.xxl} {
-    ${() => 'padding: 0 40px'};
-  }
-`
+import {
+  StyledSwapContainer,
+  Wrapper,
+  PanelWrapper,
+  FormGroup,
+  Label,
+  InputWrapper,
+  Input,
+  SelectWrapper,
+  Select,
+  IconWrapper,
+  ToNetworkText,
+} from 'views/Bridge/styles'
+import Page from 'views/Page'
+import FormContainer from 'views/Bridge/FormContainer'
+import FlipButton from 'views/Bridge/FlipButton'
+import useBridgeForm from 'views/Bridge/useBridgeForm'
 
 const ConnectButtonReplace = ({ children }) => {
   const { address: account } = useAccount()
@@ -52,11 +27,32 @@ const ConnectButtonReplace = ({ children }) => {
   if (!account) {
     return <ConnectWalletButton width="100%" withIcon />
   }
+
   return children
 }
 
 export default function Bridge() {
-  const [bridgeType, setBridgeType] = useState(BridgeType.DEPOSIT)
+  const {
+    formState,
+    handleFlip,
+    handleTokenChange,
+    handleAmountChange,
+    getAvailableTokens,
+    networks,
+    isValid,
+    isSubmitting,
+    handleSubmit,
+  } = useBridgeForm()
+
+  const availableTokens = getAvailableTokens()
+
+  const onBridgeClick = async () => {
+    const data = await handleSubmit()
+
+    if (data) {
+      console.log('===>', data)
+    }
+  }
 
   return (
     <Page removePadding hideFooterOnDesktop={false} showExternalLink={false} showHelpLink={false}>
@@ -66,8 +62,40 @@ export default function Bridge() {
             <Wrapper height="100%">
               <SwapUIV2.SwapFormWrapper>
                 <SwapUIV2.SwapTabAndInputPanelWrapper style={{ marginTop: '42px' }}>
-                  {/* <BridgeSelection bridgeType={bridgeType} setBridgeType={setBridgeType} /> */}
-                  <FormMain bridgeType={bridgeType} />
+                  <FormContainer>
+                    <FormGroup>
+                      <Label htmlFor="from">{`From ${networks.from}`}</Label>
+                      <InputWrapper>
+                        <Input
+                          type="text"
+                          id="from"
+                          placeholder="0.00"
+                          value={formState.fromAmount}
+                          onChange={(e) => handleAmountChange(e.target.value)}
+                        />
+                        <SelectWrapper>
+                          <Select value={formState.fromToken} onChange={(e) => handleTokenChange(e.target.value)}>
+                            {availableTokens.map((token) => (
+                              <option key={token} value={token}>
+                                {token}
+                              </option>
+                            ))}
+                          </Select>
+                          <IconWrapper>
+                            <ChevronDownIcon />
+                          </IconWrapper>
+                        </SelectWrapper>
+                      </InputWrapper>
+                    </FormGroup>
+                    <FlipButton onClick={handleFlip} />
+                    <FormGroup>
+                      <Label htmlFor="to">{`To ${networks.to}`}</Label>
+                      <InputWrapper>
+                        <Input type="text" id="to" placeholder="0.00" value={formState.toAmount} disabled readOnly />
+                        <ToNetworkText>{formState.toToken}</ToNetworkText>
+                      </InputWrapper>
+                    </FormGroup>
+                  </FormContainer>
                 </SwapUIV2.SwapTabAndInputPanelWrapper>
                 <PanelWrapper>
                   <ConnectButtonReplace>
@@ -77,10 +105,10 @@ export default function Bridge() {
                         width="100%"
                         data-dd-action-name="Swap commit button"
                         variant="primary"
-                        disabled={false}
-                        onClick={() => {}}
+                        disabled={!isValid || isSubmitting}
+                        onClick={onBridgeClick}
                       >
-                        Connect Wallet
+                        Bridge
                       </CommitButton>
                     </Box>
                   </ConnectButtonReplace>
