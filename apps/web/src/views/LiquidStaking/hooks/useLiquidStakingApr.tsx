@@ -25,6 +25,7 @@ export const useLiquidStakingApr = (): UseLiquidStakingAprType => {
       const result = await Promise.allSettled(
         liquidStakingList.map(async (i) => {
           let apr: number | null = null
+          console.log("LIq staking.........")
           const { data: responseData } = await fetch(i.aprUrl).then((res) => res.json())
 
           if (responseData?.annualInterestRate) {

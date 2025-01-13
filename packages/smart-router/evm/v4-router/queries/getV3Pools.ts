@@ -80,6 +80,7 @@ type FillPoolsWithTicksParams = {
 async function fillPoolsWithTicks({ pools, clientProvider, gasLimit }: FillPoolsWithTicksParams): Promise<V3Pool[]> {
   const chainId: ChainId = pools[0]?.token0.chainId
   const tickLensAddress = V3_TICK_LENS_ADDRESSES[chainId]
+  console.log("fillPoolsWithTicks")
   const client = clientProvider?.({ chainId })
   if (!client || !tickLensAddress) {
     throw new Error('Fill pools with ticks failed. No valid public client or tick lens found.')
@@ -114,6 +115,7 @@ async function fillPoolsWithTicks({ pools, clientProvider, gasLimit }: FillPools
   for (const [index, result] of res.results.entries()) {
     const { poolIndex } = bitmapIndexes[index]
     const pool = poolsWithTicks[poolIndex]
+    console.log("Pooool: ", pool )
     const data = result.success
       ? decodeFunctionResult({
           abi: tickLensAbi,

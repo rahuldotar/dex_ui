@@ -82,6 +82,7 @@ class XMLHttpRequestWithFetch {
     if (!this.url) {
       return
     }
+    console.log("Hey polyfilll")
     fetch(this.url, {
       method: this.method || 'GET',
       body: _body,

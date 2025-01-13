@@ -42,9 +42,11 @@ export const useAllTypeBestTrade = () => {
   }, [isQuotingPaused, bestOrder.order, bestOrder.isLoading, bestOrder.error])
 
   const ammCurrentTrade = useMemo(() => {
+    // debugger
     if (!lockedAMMTrade.current) {
       lockedAMMTrade.current = trade
     }
+    // debugger
     lockedAMMTrade.current = isQuotingPaused ? lockedAMMTrade.current : trade
     return lockedAMMTrade.current
   }, [isQuotingPaused, trade])
@@ -74,7 +76,8 @@ export const useAllTypeBestTrade = () => {
   const hasAvailableDutchOrder =
     bestOrder.enabled && bestOrder.order?.type === OrderType.DUTCH_LIMIT && bestOrder.isValidQuote
   const betterQuote = useBetterQuote(classicAmmOrder, hasAvailableDutchOrder ? currentOrder : undefined)
-  const finalOrder = xEnabled ? betterQuote : classicAmmOrder
+  // debugger
+  const finalOrder = false ? betterQuote : classicAmmOrder
   const tradeLoaded = Boolean(finalOrder && !finalOrder.isLoading)
 
   return {

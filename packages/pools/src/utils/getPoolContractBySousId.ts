@@ -101,6 +101,7 @@ export async function getPoolContractBySousId({ chainId, sousId, signer, publicC
   if (!chainId) {
     return null
   }
+  debugger
   const pools = await getPoolsConfig(chainId)
   const pool = pools?.find((p) => p.sousId === Number(sousId))
   if (!pool) {

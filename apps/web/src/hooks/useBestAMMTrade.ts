@@ -160,6 +160,7 @@ export function useBestAMMTrade({ type = 'quoter', ...params }: useBestAMMTradeO
     [type, isWrapping],
   )
 
+  // debugger
   // const isPriceApiEnabled = useExperimentalFeatureEnabled(EXPERIMENTAL_FEATURES.PriceAPI)
   const isQuoterAPIEnabled = useMemo(() => Boolean(!isWrapping && type === 'api'), [isWrapping, type])
 
@@ -266,11 +267,13 @@ function bestTradeHookFactory<
     const getBestTrade = useGetBestTrade()
     const { gasPrice } = useFeeDataWithGasPrice()
     const gasLimit = useMulticallGasLimit(currency?.chainId)
+    // console.log("bestTradeHookFactory 270 ", gasLimit)
     const currenciesUpdated = usePropsChanged(baseCurrency, currency)
     const queryClient = useQueryClient()
 
     const keepPreviousDataRef = useRef<boolean>(true)
 
+    // debugger
     if (currenciesUpdated) {
       keepPreviousDataRef.current = false
     }
@@ -636,6 +639,7 @@ export function useBestTradeFromApi({
         },
         body: JSON.stringify(body),
       })
+      // debugger
       const serializedRes = await serverRes.json()
 
       const isExactIn = tradeType === TradeType.EXACT_INPUT

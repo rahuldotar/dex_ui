@@ -37,8 +37,11 @@ export function getDefaultGasBuffer(chainId?: ChainId) {
 export type GetGasLimitOnChainParams = Pick<GetGasLimitParams, 'chainId' | 'client'>
 
 export async function getGasLimitOnChain({ chainId, client }: GetGasLimitOnChainParams) {
+  console.log("getGasLimitOnChain")
   const multicall = getMulticallContract({ chainId, client })
+  console.log("getGasLimitOnChain 42", multicall)
   const gasLeft = (await multicall.read.gasLeft()) as bigint
+  console.log("getGasLimitOnChain 44", gasLeft)
   return gasLeft
 }
 
@@ -49,11 +52,13 @@ export async function getGasLimit({
   gasBuffer: gasBufferInput = getDefaultGasBuffer(chainId),
   client,
 }: GetGasLimitParams) {
+  console.log("getGasLimit 53")
   const gasLimitOverride = gasLimitInput && toBigInt(gasLimitInput)
   const maxGasLimit = toBigInt(maxGasLimitInput)
   const gasBuffer = toBigInt(gasBufferInput)
 
   const gasLimit = gasLimitOverride || (await getGasLimitOnChain({ chainId, client })) || maxGasLimit
+  console.log("getGasLimit 61" , gasLimit)
   const minGasLimit = gasLimit < maxGasLimit ? gasLimit : maxGasLimit
   return minGasLimit - gasBuffer
 }

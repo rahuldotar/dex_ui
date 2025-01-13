@@ -37,12 +37,14 @@ export async function multicallByGasLimit(
     ...rest
   }: CallByGasLimitParams,
 ) {
+  console.log("multicallByGasLimit 40")
   const gasLimit = await getGasLimit({
     chainId,
     gasBuffer,
     client,
     ...rest,
   })
+  console.log("multicallByGasLimit 47")
   const callResult = await callByChunks(splitCallsIntoChunks(calls, gasLimit), {
     gasBuffer,
     client,
@@ -140,6 +142,7 @@ async function call(calls: MulticallRequestWithGas[], params: CallParams): Promi
     dropUnexecutedCalls = false,
     signal,
   } = params
+  console.log("Call 143 params: ", params)
   if (!calls.length) {
     return {
       results: [],
@@ -149,6 +152,7 @@ async function call(calls: MulticallRequestWithGas[], params: CallParams): Promi
 
   abortInvariant(signal, 'Multicall aborted')
 
+  console.log("call 2123132")
   const contract = getMulticallContract({ chainId, client })
   try {
     const { result } = await contract.simulate.multicallWithGasLimitation([calls, gasBuffer])
@@ -197,6 +201,7 @@ async function call(calls: MulticallRequestWithGas[], params: CallParams): Promi
 
 async function callByChunks(chunks: MulticallRequestWithGas[][], params: CallParams): Promise<CallResult> {
   try {
+    console.log("callByChunks 203")
     const { blockConflictTolerance = getBlockConflictTolerance(params.chainId) } = params
     const callReturns = await Promise.all(chunks.map((chunk) => call(chunk, params)))
 

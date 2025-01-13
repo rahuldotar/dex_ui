@@ -133,6 +133,7 @@ export function useV3PoolsWithTicksOnChain(
   options?: V3PoolsHookParams,
 ): V3PoolsResult {
   const gasLimit = useMulticallGasLimit(currencyA?.chainId)
+  // console.log("useV3PoolsWithTicksOnChain 136", gasLimit)
   const key = useMemo(() => {
     if (
       !currencyA ||

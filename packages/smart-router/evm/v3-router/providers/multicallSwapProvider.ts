@@ -74,6 +74,7 @@ export class PancakeMulticallProvider extends IMulticallProvider<PancakeMultical
 
     // console.log({ calls }, `About to multicall for ${functionName} across ${addresses.length} addresses`)
 
+    console.log("Multicall 77")
     const { results: result, blockNumber } = await multicallByGasLimit(calls, {
       gasLimit: additionalConfig?.gasLimit,
       gasBuffer: additionalConfig?.gasBuffer,
@@ -134,7 +135,9 @@ export class PancakeMulticallProvider extends IMulticallProvider<PancakeMultical
     approxGasUsedPerSuccessCall: number
     approxGasUsedPerFailCall: number
   }> {
+
     const { address, functionName, functionParams, abi, additionalConfig } = params
+    console.log("Multicall params 158: ", params)
     const gasLimitPerCall = additionalConfig?.gasLimitPerCall ?? this.gasLimitPerCall
     const calls = functionParams.map((functionParam) => {
       const callData = encodeFunctionData({
@@ -155,6 +158,7 @@ export class PancakeMulticallProvider extends IMulticallProvider<PancakeMultical
     //   `About to multicall for ${functionName} at address ${address} with ${functionParams.length} different sets of params`,
     // )
 
+    console.log("Multicall 158")
     const { results: result, blockNumber } = await multicallByGasLimit(calls, {
       gasLimit: additionalConfig?.gasLimit,
       gasBuffer: additionalConfig?.gasBuffer,
@@ -163,7 +167,7 @@ export class PancakeMulticallProvider extends IMulticallProvider<PancakeMultical
       client: this.provider,
       signal: additionalConfig?.signal,
     })
-
+    console.log("Multicall 158 calling")
     const results: Result<TReturn>[] = []
 
     const gasUsedForSuccess: number[] = []
@@ -195,6 +199,7 @@ export class PancakeMulticallProvider extends IMulticallProvider<PancakeMultical
       }
     }
 
+    console.log("Multicall results 158: ", results)
     return {
       blockNumber,
       results,
@@ -234,6 +239,7 @@ export class PancakeMulticallProvider extends IMulticallProvider<PancakeMultical
     //   `About to multicall for ${functionNames.length} functions at address ${address} with ${functionParams?.length} different sets of params`,
     // )
 
+    console.log("Multicall 239")
     const { results: result, blockNumber } = await multicallByGasLimit(calls, {
       gasLimit: additionalConfig?.gasLimit,
       gasBuffer: additionalConfig?.gasBuffer,

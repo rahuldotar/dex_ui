@@ -45,6 +45,7 @@ export function useSwapBestOrder({ maxHops }: Options = {}) {
     return stableSwap && isExactIn
   }, [stableSwap, isExactIn])
 
+  // debugger
   const bestTradeOptions = {
     enabled,
     amount,

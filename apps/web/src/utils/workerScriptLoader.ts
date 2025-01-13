@@ -8,6 +8,7 @@ export function createWorkerScriptLoader() {
 
   return async function loadWorkerScript() {
     if (!loadScriptPromise) {
+      console.log("loadeWorkerScriptttttttt")
       loadScriptPromise = fetch(worker.url, { cache: 'force-cache' })
         .then((r) => r.blob())
         .then((b) => {

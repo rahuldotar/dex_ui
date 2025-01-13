@@ -137,6 +137,7 @@ const SwapCommitButtonInner = memo(function SwapCommitButtonInner({
   const { address: account } = useAccount()
   const { t } = useTranslation()
   const chainId = useChainId()
+  // debugger
   // form data
   const { independentField } = useSwapState()
   const [inputCurrency, outputCurrency] = useSwapCurrency()
@@ -277,7 +278,7 @@ const SwapCommitButtonInner = memo(function SwapCommitButtonInner({
     if (isRecipientError) return t('Invalid recipient')
     return (
       swapInputError ||
-      (tradeLoading && <Dots>{t('Searching For The Best Price')}</Dots>) ||
+      (tradeLoading && <Dots>{t('Searching For The Best Price2')}</Dots>) ||
       (priceImpactSeverity > 3 && !isExpertMode
         ? t('Price Impact Too High')
         : priceImpactSeverity > 2
@@ -312,7 +313,7 @@ const ResetRoutesButton = () => {
   return (
     <AutoColumn gap="12px">
       <GreyCard style={{ textAlign: 'center', padding: '0.75rem' }}>
-        <Text color="textSubtle">{t('Insufficient liquidity for this trade.')}</Text>
+        <Text color="textSubtle">{t('Insufficient liquidity for this trade2.')}</Text>
       </GreyCard>
       {isRoutingSettingChange && (
         <Message variant="warning" icon={<></>}>
